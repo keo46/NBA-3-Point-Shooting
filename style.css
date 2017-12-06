@@ -1,0 +1,75 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#chart {
+    margin: 15px;
+}
+
+.path {
+    fill: none;
+    stroke: #999;
+    stroke-width: 2;
+}
+
+p {
+    max-width: 600px;
+    font-family: Georgia, Times, Serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    color: #4a4a4a;
+    margin: 0 auto 10px auto;
+
+}
+
+h2 {
+    margin: 20px auto 10px auto;
+    padding-top: 20px;
+    border-top: 4px solid #000;
+    max-width: 600px;
+    font-family: Helvetica, Arial, Sans-Serif;
+}
+
+.chart-container {
+    max-width: 600px;
+    margin: 0 auto 10px auto;
+}
+
+#big-chart {
+    max-width: 600px;
+    margin: 0 auto 10px auto;
+}
+
+.domain {
+    display: none;
+}
+
+.tick line {
+    stroke: #ccc;
+}
+
+.tick text {
+    fill: #ccc;
+}
+
+.is-ship-winner {
+    stroke: #000;
+    stroke-width: 2;
+}
+
+.tooltip {
+    text-anchor: middle;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Helvetica, Arial, Sans-Serif;
+    display: none;
+    text-shadow: 2px 2px 0px #fff,
+        2px -2px 0px #fff,
+        -2px 2px 0px #fff,
+        -2px -2px 0px #fff;
+}
+
+.tooltip.active {
+    display: block;
+}
