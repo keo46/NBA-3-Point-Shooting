@@ -10,7 +10,13 @@ html, body {
 .path {
     fill: none;
     stroke: #999;
-    stroke-width: 2;
+    stroke-width: 1.5;
+    stroke-dasharray: 8,4;
+}
+
+h1 {
+    text-align: center; 
+    font-family: Helvetica;
 }
 
 p {
@@ -33,11 +39,15 @@ h2 {
 
 .chart-container {
     max-width: 600px;
-    margin: 0 auto 10px auto;
+    margin: 10px auto 20px auto;
+}
+
+.axis-label {
+    font-family: Helvetica;
 }
 
 #big-chart {
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto 10px auto;
 }
 
@@ -72,4 +82,10 @@ h2 {
 
 .tooltip.active {
     display: block;
+}
+
+.highlight-circle {
+    stroke: #000;
+    stroke-width: 2;
+    fill: none;
 }

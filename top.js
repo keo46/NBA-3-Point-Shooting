@@ -59,8 +59,8 @@ function makeBigChart(data,div) {
 		'right' : 20,
 	}
 
-	var width = 600 - margin.left - margin.right
-	var height = 560 - margin.top - margin.bottom
+	var width = 900 - margin.left - margin.right
+	var height = 860 - margin.top - margin.bottom
 
 	var chartWidth = width-margin.left-margin.right
 	var chartHeight = height-margin.top-margin.bottom
@@ -87,12 +87,15 @@ function makeBigChart(data,div) {
 				.tickSize(-chartWidth-10)
 		)
 	chartInner.append("text")
+	  .attr("class", "axis-label")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left)
       .attr("x",0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
-      .text("Winning Percentage");      
+      .text("Winning Percentage");
+
+
 
 
 	chartInner.append('g')
@@ -107,7 +110,8 @@ function makeBigChart(data,div) {
       .attr("transform",
             "translate(" + (width/2) + " ," +  (chartHeight+45) + ")")
       .style("text-anchor", "middle")
-      .text("Three-Pointers Attempted");
+      .text("Three-Pointers Attempted")
+      .style("font-family", "Helvetica");
 
 	var colorScale = d3.scaleLinear()
 		.domain([1979,2016])

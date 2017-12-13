@@ -81,7 +81,8 @@ function makeSmallChart(data, team, div, seasons) {
 
 	var dots = chartInner.selectAll('circle')
 		.data(filteredData)
-		.enter().append('circle')
+		.enter()
+		.append('circle')
 		.attr('r', 3)
 		.attr('cx', function(d) {
 			return xScale(parseInt(d['3PA']))
@@ -112,22 +113,21 @@ function makeSmallChart(data, team, div, seasons) {
 		tooltip.classed('active', false)
 	})
 
-	// var SeasonsToHighlight = filteredData.filter(function(d) {
-	// 	return seasons.indexOf(d['Season']) !== -1
-	// })
+	var SeasonsToHighlight = filteredData.filter(function(d) {
+		return seasons.indexOf(d['Season']) !== -1
+	})
 
-	// var labels = chartInner.append('g').selectAll('text')
-	// 	.data(SeasonsToHighlight)
-	// 	.enter().append('text')
-	// 	.attr('x', function(d) {
-	// 		return xScale(parseInt(d['3PA']))
-	// 	})
-	// 	.attr('y', function(d) {
-	// 		return yScale(parseFloat(d['W/L%']))
-	// 	})
-	// 	.text(function(d) {
-	// 		return d['Season']
-	// 	})
+	var labels = chartInner.append('g').selectAll('circle')
+		.data(SeasonsToHighlight)
+		.enter().append('circle')
+		.attr('class','highlight-circle')
+		.attr('cx', function(d) {
+			return xScale(parseInt(d['3PA']))
+		})
+		.attr('cy', function(d) {
+			return yScale(parseFloat(d['W/L%']))
+		})
+		.attr('r', 4)
 
 
 	// console.debug(SeasonsToHighlight)
